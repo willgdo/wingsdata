@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #222;
+  --secondary: #e2e4e9;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: var(--body-font);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,6 +1,6 @@
-# WingData API ✈️
+# wingsdata ✈️
 
-WingData is an API for querying Brazilian aircraft registration data.
+WingsData is an API for querying Brazilian aircraft registration data.
 
 ## Tech Stack (...so far)
 
@@ -10,4 +10,3 @@ WingData is an API for querying Brazilian aircraft registration data.
 ## Status
 
 🚧 Work in progress
-# wingsdata
