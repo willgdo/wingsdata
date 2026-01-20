@@ -1,8 +1,10 @@
+import { Divider } from "@mui/material";
 import AircraftResult from "./AircraftResult";
 import Header from "./Header";
-import HelpPopover from "./HelpPopover";
+// import HelpPopover from "./HelpPopover";
 import SearchAircraft from "./SearchAircraft";
 import SearchHistory from "./SearchHistory";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -10,8 +12,10 @@ const App = () => {
       <Header />
       <SearchAircraft />
       <AircraftResult />
+      <Divider sx={{ my: 2 }} />
       <SearchHistory />
-      <HelpPopover />
+      <Footer />
+      {/* <HelpPopover /> */}
     </>
   );
 };

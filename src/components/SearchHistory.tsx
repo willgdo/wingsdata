@@ -12,7 +12,7 @@ const SearchHistory = () => {
     <Box
       component="section"
       sx={{
-        m: 6,
+        m: 4,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

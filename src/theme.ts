@@ -3,6 +3,9 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     mode: "light",
+    text: {
+      primary: "#222",
+    },
     primary: {
       main: "#8e8d8d", // 0e0e11
     },
@@ -20,6 +23,24 @@ const theme = createTheme({
   },
   shape: {
     borderRadius: 8,
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "*": {
+          boxSizing: "border-box",
+          scrollBehavior: "smooth",
+        },
+        body: {
+          margin: 0,
+          padding: 0,
+        },
+        a: {
+          textDecoration: "none",
+          color: "inherit",
+        },
+      },
+    },
   },
 });
 

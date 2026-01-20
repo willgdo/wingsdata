@@ -6,6 +6,9 @@ WingsData is an API for querying Brazilian aircraft registration data.
 
 - Vite
 - TypeScript
+- React
+- i18n
+- Material UI
 
 ## Status
 
