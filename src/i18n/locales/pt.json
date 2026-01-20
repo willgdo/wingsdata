@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Digite o registro da aeronave",
+    "placeholder": "Ex: PT-MUG, PP-XYZ, N850CX",
+    "button": "Buscar",
+    "brazilian": "Brasileira",
+    "foreign": "Estrangeiro"
+  },
+  "history": {
+    "title": "Buscas recentes",
+    "empty": "Ainda não há histórico de buscas"
+  },
+  "result": {
+    "manufacturer": "Fabricante",
+    "model": "Modelo",
+    "operator": "Operador",
+    "year": "Ano",
+    "status": "Status"
+  }
+}

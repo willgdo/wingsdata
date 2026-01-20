@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Type aircraft registration",
+    "placeholder": "Ex: PT-MUG, PP-XYZ, N850CX",
+    "button": "Search",
+    "brazilian": "Brazilian",
+    "foreign": "Foreign"
+  },
+  "history": {
+    "title": "Recent searches",
+    "empty": "No search history yet"
+  },
+  "result": {
+    "manufacturer": "Manufacturer",
+    "model": "Model",
+    "operator": "Operator",
+    "year": "Year",
+    "status": "Status"
+  }
+}

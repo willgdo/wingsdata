@@ -1,7 +1,19 @@
-// import "./App.css";
+import AircraftResult from "./AircraftResult";
+import Header from "./Header";
+import HelpPopover from "./HelpPopover";
+import SearchAircraft from "./SearchAircraft";
+import SearchHistory from "./SearchHistory";
 
 const App = () => {
-  return <h1>Init</h1>;
+  return (
+    <>
+      <Header />
+      <SearchAircraft />
+      <AircraftResult />
+      <SearchHistory />
+      <HelpPopover />
+    </>
+  );
 };
 
 export default App;
