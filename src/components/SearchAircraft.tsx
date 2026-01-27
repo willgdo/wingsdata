@@ -3,8 +3,7 @@ import {
   TextField,
   Button,
   Typography,
-  Radio,
-  RadioGroup,
+  Checkbox,
   FormControlLabel,
 } from "@mui/material";
 import { useState } from "react";
@@ -13,21 +12,20 @@ import { useTranslation } from "react-i18next";
 const SearchAircraft = () => {
   const { t } = useTranslation();
 
-  const [registryType, setRegistryType] = useState<"br" | "foreign">("br");
+  const [isForeign, setIsForeign] = useState(false);
   const [registration, setRegistration] = useState("");
 
   return (
     <Box
       component="section"
       sx={{
-        mt: 8,
+        mt: 4,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 3,
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: 500 }}>
+      <Typography variant="h6" sx={{ fontWeight: 500 }}>
         {t("app.title")}
       </Typography>
 
@@ -37,39 +35,44 @@ const SearchAircraft = () => {
           gap: 2,
           width: "100%",
           maxWidth: 420,
+          flexDirection: { xs: "column", sm: "row" },
+          padding: "1.5rem",
         }}
       >
-        <TextField
-          fullWidth
-          placeholder={t("app.placeholder")}
-          value={registration}
-          sx={{
-            textAlign: "center",
-          }}
-          onChange={(e) => setRegistration(e.target.value.toUpperCase())}
-        />
+        <div>
+          <TextField
+            fullWidth
+            placeholder={t("app.placeholder")}
+            value={registration}
+            sx={{
+              textAlign: "center",
+            }}
+            onChange={(e) => setRegistration(e.target.value.toUpperCase())}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={isForeign}
+                onChange={(e) => setIsForeign(e.target.checked)}
+                size="small"
+              />
+            }
+            label={t("app.foreign")}
+          />
+        </div>
 
-        <Button variant="contained" disableElevation sx={{ px: 4 }}>
+        <Button
+          variant="contained"
+          disableElevation
+          sx={{
+            px: 4,
+            height: 56,
+            width: { xs: "100%", sm: "auto" },
+          }}
+        >
           {t("app.button")}
         </Button>
       </Box>
-
-      <RadioGroup
-        row
-        value={registryType}
-        onChange={(e) => setRegistryType(e.target.value as "br" | "foreign")}
-      >
-        <FormControlLabel
-          value="br"
-          control={<Radio size="small" />}
-          label={t("app.brazilian")}
-        />
-        <FormControlLabel
-          value="foreign"
-          control={<Radio size="small" />}
-          label={t("app.foreign")}
-        />
-      </RadioGroup>
     </Box>
   );
 };

@@ -6,7 +6,6 @@ import {
   ToggleButtonGroup,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.png";
 
 const Header = () => {
   const { i18n } = useTranslation();
