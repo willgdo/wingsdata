@@ -6,6 +6,7 @@ import {
   ToggleButtonGroup,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const { i18n } = useTranslation();
@@ -23,15 +24,26 @@ const Header = () => {
     <AppBar component="header" position="static" elevation={0}>
       <Toolbar
         sx={{
+          width: "100%",
+          maxWidth: "1200px",
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
+          margin: "0 auto",
+          padding: "1.5rem 1rem",
         }}
       >
         <Typography
-          variant="h6"
-          sx={{ fontWeight: 600, letterSpacing: "0.08em" }}
+          variant="h1"
+          component="div"
+          sx={{
+            fontFamily: "Pacifico",
+            fontSize: "1.5rem",
+            lineHeight: 1.2,
+            color: "text.secondary",
+          }}
         >
-          WingsData
+          Wings <br /> &nbsp;&nbsp;&nbsp;&nbsp;Data
         </Typography>
 
         <ToggleButtonGroup
@@ -39,6 +51,9 @@ const Header = () => {
           exclusive
           onChange={handleLanguageChange}
           size="medium"
+          sx={{
+            backgroundColor: "text.secondary",
+          }}
         >
           <ToggleButton value="pt">PT</ToggleButton>
           <ToggleButton value="en">EN</ToggleButton>

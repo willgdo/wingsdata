@@ -5,13 +5,14 @@ const theme = createTheme({
     mode: "light",
     text: {
       primary: "#222",
+      secondary: "#9a9999",
     },
     primary: {
-      main: "#8e8d8d", // 0e0e11
+      main: "#222",
     },
     background: {
       default: "#e2e4e9",
-      paper: "#222",
+      paper: "#555",
     },
   },
   typography: {
