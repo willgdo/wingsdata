@@ -1,0 +1,18 @@
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: var(--dark-100);
+  text-align: center;
+  padding: 20px 0;
+  font-weight: bold;
+  font: var(--secondary-text);
+
+  > div {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1200px;
+    border-bottom: 1px solid var(--orange);
+    border-radius: 20px;
+  }
+}

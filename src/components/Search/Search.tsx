@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import "./Search.css";
 
 export const Search = () => {
   const { t } = useTranslation();
@@ -13,8 +14,16 @@ export const Search = () => {
               type="text"
               placeholder={t("search.placeholder")}
             />
-            <button type="submit" className="search-btn" aria-label="Buscar">
-              <img src="/airplane.png" alt="Buscar" className="plane-img" />
+            <button
+              type="submit"
+              className="search-btn"
+              aria-label={t("search.button")}
+            >
+              <img
+                src="./btn-airplane.png"
+                alt={t("search.button")}
+                className="plane-img"
+              />
             </button>
           </div>
           <div>

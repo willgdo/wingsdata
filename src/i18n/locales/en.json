@@ -1,7 +1,15 @@
 {
   "search": {
     "placeholder": "Type the aircraft registration...",
-    "checkbox": "Foreign",
+    "checkbox": "Foreign aircraft",
     "button": "Search"
+  },
+  "result": {},
+  "history": {
+    "empty": "No history available yet"
+  },
+  "footer": {
+    "rights": "No rights reserved",
+    "developedBy": "Developed by"
   }
 }

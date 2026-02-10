@@ -1,24 +1,19 @@
-import { Header } from "../components/Header";
-import { History } from "../components/History";
-import { Result } from "../components/Result";
-import { Search } from "../components/Search";
+import { Footer } from "../components/Footer/Footer";
+import { Header } from "../components/Header/Header";
+import { History } from "../components/History/History";
+import { Result } from "../components/Result/Result";
+import { Search } from "../components/Search/Search";
 
-const App = () => {
+const Home = () => {
   return (
     <>
       <Header />
       <Search />
       <Result />
       <History />
-      <footer>
-        <div>
-          Nenhum direito reservado
-          <br />
-          Desenvolvido por <strong>Willian Oliveira</strong> - v0.1.0
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
 
-export default App;
+export default Home;

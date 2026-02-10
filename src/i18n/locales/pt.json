@@ -3,5 +3,13 @@
     "placeholder": "Digite a matrícula da aeronave...",
     "checkbox": "Estrangeira",
     "button": "Buscar"
+  },
+  "result": {},
+  "history": {
+    "empty": "Ainda não há histórico disponível"
+  },
+  "footer": {
+    "rights": "Nenhum direito reservado",
+    "developedBy": "Desenvolvido por"
   }
 }

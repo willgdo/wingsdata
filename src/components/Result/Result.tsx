@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
+import "./Result.css";
 
-export const History = () => {
+export const Result = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="history">
-      <div>Ainda não há dados no histórico...</div>
+    <section id="result">
+      <div></div>
     </section>
   );
 };

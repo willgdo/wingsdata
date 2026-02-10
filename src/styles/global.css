@@ -1,7 +1,7 @@
 :root {
   --dark-100: #878ea1;
-  --dark-300: #292c34;
-  --dark-200: #16181d;
+  --dark-200: #292c34;
+  --neutralBlack: #16181d;
   --neutralWhite: #e2e4e9;
   --orange: #ff8a00;
 
@@ -14,7 +14,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: var(--dark-200);
+  background-color: var(--neutralBlack);
 }
 
 body {
