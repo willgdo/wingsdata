@@ -1,6 +1,7 @@
 {
   "search": {
     "placeholder": "Type the aircraft registration...",
-    "estrangeira": "Foreign"
+    "checkbox": "Foreign",
+    "button": "Search"
   }
 }

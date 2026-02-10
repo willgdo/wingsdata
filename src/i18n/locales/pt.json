@@ -1,6 +1,7 @@
 {
   "search": {
     "placeholder": "Digite a matrícula da aeronave...",
-    "estrangeira": "Estrangeira"
+    "checkbox": "Estrangeira",
+    "button": "Buscar"
   }
 }

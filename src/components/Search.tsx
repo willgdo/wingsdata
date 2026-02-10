@@ -14,10 +14,10 @@ export const Search = () => {
           />
           <div>
             <input type="checkbox" id="checkbox" />
-            <label htmlFor="checkbox">{t("search.estrangeira")}</label>
+            <label htmlFor="checkbox">{t("search.checkbox")}</label>
           </div>
         </div>
-        <button type="submit">Search</button>
+        <button type="submit">{t("search.button")}</button>
       </form>
     </section>
   );

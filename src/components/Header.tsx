@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 type Language = "pt" | "en";
 
 export const Header = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   const currentLang = i18n.language as Language;
 
@@ -16,7 +16,7 @@ export const Header = () => {
   return (
     <header>
       <div>
-        <h1>Wings Data</h1>
+        <h1>.:WingsData:.</h1>
 
         <div className="lang-select-wrapper">
           <nav>
