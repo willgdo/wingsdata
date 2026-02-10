@@ -11,9 +11,11 @@ const App = () => {
       <Result />
       <History />
       <footer>
-        Nenhum direito reservado
-        <br />
-        Desenvolvido por <strong>Willian Oliveira</strong> - v0.1.0
+        <div>
+          Nenhum direito reservado
+          <br />
+          Desenvolvido por <strong>Willian Oliveira</strong> - v0.1.0
+        </div>
       </footer>
     </>
   );

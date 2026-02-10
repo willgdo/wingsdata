@@ -7,17 +7,21 @@ export const Search = () => {
     <section id="search">
       <form>
         <div className="input-wrapper">
-          <input
-            id="search-input"
-            type="text"
-            placeholder={t("search.placeholder")}
-          />
+          <div className="input-search">
+            <input
+              id="search-input"
+              type="text"
+              placeholder={t("search.placeholder")}
+            />
+            <button type="submit" className="search-btn" aria-label="Buscar">
+              <img src="/airplane.png" alt="Buscar" className="plane-img" />
+            </button>
+          </div>
           <div>
             <input type="checkbox" id="checkbox" />
             <label htmlFor="checkbox">{t("search.checkbox")}</label>
           </div>
         </div>
-        <button type="submit">{t("search.button")}</button>
       </form>
     </section>
   );

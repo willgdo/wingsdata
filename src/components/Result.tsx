@@ -5,7 +5,7 @@ export const Result = () => {
 
   return (
     <section id="result">
-      <div>Digite uma matrícula para ver o resultado</div>
+      <div></div>
     </section>
   );
 };
