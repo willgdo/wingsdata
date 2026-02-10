@@ -1,0 +1,140 @@
+/* Header  */
+header {
+  height: 80px;
+  background-color: var(--dark-200);
+  color: var(--dark-500);
+
+  > div {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--dark-300);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .lang-select-wrapper {
+      width: fit-content;
+      border-radius: 10px;
+      font: var(--text-sm);
+      border: 1px solid var(--dark-300);
+
+      & nav ul li {
+        background-color: var(--dark-200);
+        width: fit-content;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: var(--dark-400);
+        font-weight: bold;
+      }
+
+      & nav ul li:hover {
+        color: var(--dark-500) !important;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.lang-selected {
+  background-color: var(--alert) !important;
+  color: var(--dark-500) !important;
+}
+
+/* Search */
+section#search {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section#search form {
+  display: flex;
+  gap: 16px;
+}
+
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#search-input {
+  width: 80%;
+  height: 56px;
+  padding: 0 20px;
+
+  border-radius: 16px;
+  border: 1px solid #ff8a00;
+  background: transparent;
+
+  font-size: 16px;
+  color: #ff8a00;
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: #ff8a00;
+  opacity: 0.8;
+}
+
+.input-wrapper > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-wrapper input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ff8a00;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.input-wrapper input[type="checkbox"]:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff8a00;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input-wrapper label {
+  font-size: 14px;
+  color: #ff8a00;
+  cursor: pointer;
+}
+
+section#search button {
+  height: 56px;
+  padding: 0 28px;
+
+  border-radius: 16px;
+  border: 1px solid #ff8a00;
+  background: transparent;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff8a00;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+section#search button:hover {
+  background-color: #ff8a00;
+  color: #1a1a1a;
+}

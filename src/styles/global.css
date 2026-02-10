@@ -4,7 +4,7 @@
   --dark-300: #292c34;
   --dark-400: #878ea1;
   --dark-500: #e2e4e9;
-  --alert: #e3b063;
+  --alert: #e36463;
 
   --title-lg: 600 2.5rem/1.2 "Maven Pro", sans-serif;
   --title-md: 600 1.7rem/1.2 "Inconsolata", sans-serif;
@@ -18,6 +18,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color: var(--dark-200);
 }
 
 body {
