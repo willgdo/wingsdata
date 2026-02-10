@@ -1,25 +1,36 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-type Language = "PT" | "EN";
+type Language = "pt" | "en";
 
 export const Header = () => {
-  const [lang, setLang] = useState<Language>("PT");
+  const { i18n, t } = useTranslation();
+
+  const currentLang = i18n.language as Language;
+
+  const handleLanguageChange = (lang: Language) => {
+    if (lang !== i18n.language) {
+      i18n.changeLanguage(lang);
+    }
+  };
+
   return (
     <header>
       <div>
         <h1>Wings Data</h1>
+
         <div className="lang-select-wrapper">
           <nav>
             <ul>
               <li
-                className={`${lang === "PT" ? "lang-selected" : ""}`}
-                onClick={() => setLang("PT")}
+                className={currentLang === "pt" ? "lang-selected" : ""}
+                onClick={() => handleLanguageChange("pt")}
               >
                 PT
               </li>
+
               <li
-                className={`${lang === "EN" ? "lang-selected" : ""}`}
-                onClick={() => setLang("EN")}
+                className={currentLang === "en" ? "lang-selected" : ""}
+                onClick={() => handleLanguageChange("en")}
               >
                 EN
               </li>
