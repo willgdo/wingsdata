@@ -1,4 +1,6 @@
 name: Update ANAC Data
+permissions:
+  contents: write
 
 on:
   schedule:
