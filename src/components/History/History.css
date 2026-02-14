@@ -1,7 +1,43 @@
 section#history {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin: 60px auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   text-align: center;
   color: var(--neutralWhite);
+}
+
+.chip-history {
+  padding: 8px 16px;
+  background-color: var(--neutralWhite);
+  color: var(--neutralBlack);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.chip-history:hover {
+  background-color: var(--orange);
+  color: var(--neutralWhite);
+  cursor: pointer;
+}
+
+.chip-history:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  section#history {
+    margin: 40px auto;
+    gap: 8px;
+  }
+
+  .chip-history {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
 }

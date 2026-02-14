@@ -4,7 +4,12 @@
     "checkbox": "Foreign aircraft",
     "button": "Search"
   },
-  "result": {},
+  "result": {
+    "manufacturer": "Manufacturer",
+    "model": "Model",
+    "operator": "Operator",
+    "year": "year"
+  },
   "history": {
     "empty": "No history available yet"
   },

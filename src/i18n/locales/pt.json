@@ -1,10 +1,15 @@
 {
   "search": {
     "placeholder": "Digite a matrícula da aeronave...",
-    "checkbox": "Estrangeira",
+    "checkbox": "Matrícula estrangeira",
     "button": "Buscar"
   },
-  "result": {},
+  "result": {
+    "manufacturer": "Fabricante",
+    "model": "Modelo",
+    "operator": "Operador",
+    "year": "Ano"
+  },
   "history": {
     "empty": "Ainda não há histórico disponível"
   },
