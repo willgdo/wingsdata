@@ -1,5 +1,10 @@
 import { useTranslation } from "react-i18next";
+import { findAircraftByRegistration } from "../../services/aircraftSearchService";
 import "./Search.css";
+
+const result = findAircraftByRegistration("PREAJ");
+
+console.log(result);
 
 export const Search = () => {
   const { t } = useTranslation();
