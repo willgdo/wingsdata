@@ -1,0 +1,28 @@
+name: Update ANAC Data
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # roda todo dia 03:00 UTC (00:00 Brasil)
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Give permission to script
+        run: chmod +x scripts/update-data.sh
+
+      - name: Run update script
+        run: ./scripts/update-data.sh
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update ANAC data"
+          git push
