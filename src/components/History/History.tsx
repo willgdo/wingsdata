@@ -1,9 +1,15 @@
 import { useTranslation } from "react-i18next";
+import type { AircraftSaved } from "../../types/aircraft";
 import "./History.css";
 
-export const History = () => {
+type HistoryProps = {
+  data: AircraftSaved[];
+  onClear: () => void;
+};
+
+export const History = ({ data, onClear }: HistoryProps) => {
   const { t } = useTranslation();
-  const empty = false;
+  const empty = data.length === 0;
 
   return (
     <section id="history">
@@ -11,16 +17,12 @@ export const History = () => {
         <div>{t("history.empty")}</div>
       ) : (
         <>
-          <div className="chip-history">PR-GUM</div>
-          <div className="chip-history">PR-EBJ</div>
-          <div className="chip-history">PS-NJR</div>
-          <div className="chip-history">PR-JRY</div>
-          <div className="chip-history">PR-XBV</div>
-          <div className="chip-history">7T-VPS</div>
-          <div className="chip-history">N607UP</div>
-          <div className="chip-history">VH-XZJ</div>
-          <div className="chip-history">N844FD</div>
-          <div className="chip-history">D-ABYS</div>
+          {data.map((item) => (
+            <div key={item.id} className="chip-history">
+              {item.aircraft?.registration}
+            </div>
+          ))}
+          <button onClick={onClear}>Limpar</button>
         </>
       )}
     </section>

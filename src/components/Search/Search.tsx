@@ -1,22 +1,34 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { findAircraftByRegistration } from "../../services/aircraftSearchService";
+import type { AircraftResult } from "../../types/aircraft";
 import "./Search.css";
 
-const result = findAircraftByRegistration("PREAJ");
+type Props = {
+  onSearch: (data: AircraftResult) => void;
+};
 
-console.log(result);
-
-export const Search = () => {
+export const Search = ({ onSearch }: Props) => {
   const { t } = useTranslation();
+  const [registration, setRegistration] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const result = findAircraftByRegistration(registration);
+    onSearch(result);
+  };
 
   return (
     <section id="search">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <div className="input-search">
             <input
               id="search-input"
               type="text"
+              value={registration}
+              onChange={(e) => setRegistration(e.target.value)}
               placeholder={t("search.placeholder")}
             />
             <button
