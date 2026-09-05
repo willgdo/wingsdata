@@ -1,3 +1,91 @@
-h1 {
-  color: white;
+header {
+  width: 100vw;
+  background-color: #121820;
+
+  h1 {
+    color: #1e2a38;
+    padding: 25px;
+    font-size: 2rem;
+    font-family: "Inconsolata", sans-serif;
+  }
+}
+
+section main {
+  width: 100vw;
+  background-color: #121820;
+  padding: 20px 0;
+
+  p {
+    color: white;
+    font-size: 1rem;
+    font-family: "Inconsolata", sans-serif;
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  input {
+    width: 35vw;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    border-radius: 15px;
+    box-shadow: none;
+    border: 2px solid white;
+    transition: all 0.3s ease-in-out;
+    background: none;
+    color: gray;
+    letter-spacing: 2px;
+  }
+
+  input:hover {
+    border-color: #3d9cff;
+    box-shadow: 0px 10px 20px -13px rgba(32, 56, 117, 0.35);
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #ff8a00;
+  }
+}
+
+.search-btn {
+  transform: translateX(-50%);
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+  }
+}
+
+.search-btn:hover,
+.search-btn img:hover {
+  background-color: #ff8a00;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section main input {
+    width: 75vw;
+    font-size: 1.5rem;
+  }
 }
