@@ -1,0 +1,19 @@
+.app-header {
+  width: 100%;
+  border-bottom: 1px solid #1e293b;
+}
+
+.app-header h1 {
+  color: #f8fafc;
+  padding: 20px 30px;
+  font-size: 2rem;
+  font-family: "Inconsolata", monospace, sans-serif;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+    padding: 16px 20px;
+  }
+}
