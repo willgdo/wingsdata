@@ -1,37 +1,49 @@
+import { useState } from "react";
 import "./App.css";
 
-const searchAircraft = () => {
-  console.log("Searching for aircraft...");
-};
+export function App() {
+  const [registration, setRegistration] = useState("");
 
-function App() {
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!registration.trim()) return;
+
+    console.log("Searching for aircraft...");
+  };
+
   return (
-    <>
-      <header>
+    <div className="app-container">
+      <header className="app-header">
         <h1>WingsData</h1>
       </header>
-      <section>
-        <main>
-          <p className="message">
-            Digite o registro da aeronave
-            {/* <br />
-            Type the aircraft registration */}
-          </p>
-          <div>
-            <input type="text" id="registration" name="registration" />
-            <button
-              type="submit"
-              className="search-btn"
-              aria-label={"Search"}
-              disabled={false}
-              onClick={searchAircraft}
-            >
-              <img src="./btn-airplane.png" alt={"Search"} />
-            </button>
-          </div>
-        </main>
-      </section>
-    </>
+
+      <main className="app-main">
+        <section className="search-section">
+          <p className="search-message">Digite o registro da aeronave</p>
+
+          <form className="search-form" onSubmit={handleSearch}>
+            <div className="input-group">
+              <input
+                type="text"
+                id="registration"
+                name="registration"
+                value={registration}
+                onChange={(e) => setRegistration(e.target.value.toUpperCase())}
+                placeholder="EX: PR-CRC"
+                maxLength={5}
+              />
+              <button
+                type="submit"
+                className="search-btn"
+                aria-label="Buscar aeronave"
+              >
+                <img src="./btn-airplane.png" alt="" aria-hidden="true" />
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
   );
 }
 
