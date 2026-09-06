@@ -1,0 +1,114 @@
+.recent-searches {
+  width: 100%;
+  max-width: 580px;
+  margin: 18px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.recent-title {
+  font-size: 0.75rem;
+  font-family: "Inconsolata", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+}
+
+.clear-all-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-family: "Inconsolata", monospace;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.clear-all-btn:hover {
+  color: #f87171;
+}
+
+/* Área de rolagem horizontal caso caiba pouco em telas pequenas */
+.chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* O Chip em si */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 0 4px 0 12px;
+  height: 32px;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: #ff8a00;
+  background-color: #172033;
+}
+
+/* Botão de texto do prefixo */
+.chip-label-btn {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.chip-label-btn:hover {
+  color: #ff8a00;
+}
+
+/* Botão de excluir individual (X) */
+.chip-remove-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0 6px;
+  margin-left: 4px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.chip-remove-btn:hover {
+  background-color: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+@media (max-width: 600px) {
+  .chips-wrapper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+}
