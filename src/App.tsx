@@ -3,6 +3,7 @@ import { Header } from "./components/Header/Header";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { RecentSearches } from "./components/RecentSearches/RecentSearches";
 import { ResultCard } from "./components/ResultCard/ResultCard";
+import { Footer } from "./components/Footer/Footer";
 import { useRecentSearches } from "./hooks/useRecentSearches";
 import type { AircraftData } from "./types/aircraft";
 import "./App.css";
@@ -53,6 +54,7 @@ export function App() {
 
         {selectedAircraft && <ResultCard aircraft={selectedAircraft} />}
       </main>
+      <Footer />
     </div>
   );
 }

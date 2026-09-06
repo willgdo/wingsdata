@@ -1,0 +1,36 @@
+.app-footer {
+  width: 100%;
+  border-top: 1px solid #16202c;
+  background-color: #0d131a;
+  padding: 24px 20px;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content p {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-content strong {
+  color: #cbd5e1;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease;
+}
+
+.footer-content strong:hover {
+  color: #ff8a00;
+}
