@@ -13,3 +13,12 @@
   margin: 0 auto;
   padding: 40px 20px;
 }
+
+.not-found-msg {
+  margin: 30px auto 0;
+  text-align: center;
+  color: #f87171;
+  font-family: "Inconsolata", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}

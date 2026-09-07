@@ -5,45 +5,77 @@ import { RecentSearches } from "./components/RecentSearches/RecentSearches";
 import { ResultCard } from "./components/ResultCard/ResultCard";
 import { Footer } from "./components/Footer/Footer";
 import { useRecentSearches } from "./hooks/useRecentSearches";
+import { findAircraftInAnac } from "./services/anacService";
+import { fetchAircraftPhoto } from "./services/photoService";
 import type { AircraftData } from "./types/aircraft";
 import "./App.css";
 
-const MOCK_AIRCRAFT: AircraftData = {
-  registration: "PR-CRC",
-  model: "Gulfstream G280",
-  manufacturer: "Gulfstream Aerospace",
-  year: 2023,
-  operator: "NATUREZA PRODUÇÕES ARTÍSTICAS E PUBLICIDADE S/S LTDA",
-  qualificationType: "MLTE / IFR",
-  imageUrl: "./prcrc.jpg",
-  credits: {
-    photographer: "Mojav",
-    source: "JetPhotos",
-  },
-};
-
 export function App() {
   const [selectedAircraft, setSelectedAircraft] = useState<AircraftData | null>(
-    MOCK_AIRCRAFT,
+    null,
   );
+  const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
-  // Consome a persistência do localStorage
   const { recentSearches, addSearch, removeSearch, clearSearches } =
     useRecentSearches();
 
-  const handleSearch = (registration: string) => {
-    // 1. Registra no histórico do localStorage
-    addSearch(registration);
+  const handleSearch = async (rawQuery: string) => {
+    setLoading(true);
+    setNotFound(false);
 
-    // 2. Temporariamente mantém o mock (logo integraremos com os dados reais da ANAC)
-    console.log("Pesquisar:", registration);
+    try {
+      // 1. Consulta no Map da ANAC
+      const anacData = await findAircraftInAnac(rawQuery);
+
+      if (!anacData || !anacData.registration) {
+        setNotFound(true);
+        setSelectedAircraft(null);
+        return;
+      }
+
+      // Adiciona aos recentes somente se a aeronave realmente existir no RAB
+      addSearch(anacData.registration);
+
+      // 2. Estado inicial com placeholder rápido
+      const currentData: AircraftData = {
+        registration: anacData.registration,
+        model: anacData.model || "Desconhecido",
+        manufacturer: anacData.manufacturer || "Desconhecido",
+        year: anacData.year || "-",
+        operator: anacData.operator || "Não informado",
+        qualificationType: anacData.qualificationType,
+        imageUrl: "./placeholder-plane.jpg",
+      };
+      setSelectedAircraft(currentData);
+
+      // 3. Busca a foto no Planespotters em segundo plano
+      const photo = await fetchAircraftPhoto(anacData.registration);
+      setSelectedAircraft((prev) =>
+        prev
+          ? {
+              ...prev,
+              imageUrl: photo.imageUrl,
+              credits: {
+                photographer: photo.photographer,
+                source: photo.source,
+              },
+            }
+          : null,
+      );
+    } catch (error) {
+      console.error("Erro na busca:", error);
+      setNotFound(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="app-container">
       <Header />
       <main className="app-main">
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar onSearch={handleSearch} isLoading={loading} />
 
         <RecentSearches
           items={recentSearches}
@@ -51,6 +83,12 @@ export function App() {
           onRemove={removeSearch}
           onClearAll={clearSearches}
         />
+
+        {notFound && (
+          <p className="not-found-msg">
+            Aeronave não localizada no Registro Aeronáutico Brasileiro (RAB).
+          </p>
+        )}
 
         {selectedAircraft && <ResultCard aircraft={selectedAircraft} />}
       </main>

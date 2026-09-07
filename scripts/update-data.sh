@@ -4,7 +4,7 @@ echo "Baixando dados da ANAC..."
 
 URL="https://sistemas.anac.gov.br/dadosabertos/Aeronaves/RAB/dados_aeronaves.json"
 
-DATA_DIR="./data"
+DATA_DIR="./public/data"
 TEMP_FILE="$DATA_DIR/temp_dados.json"
 FINAL_FILE="$DATA_DIR/data.json"
 DATE_FILE="$DATA_DIR/update_date.txt"
