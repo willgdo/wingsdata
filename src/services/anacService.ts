@@ -7,13 +7,10 @@ import type { AircraftData } from "../types/aircraft";
 // Estrutura exata dos campos como vêm no arquivo dados_aeronaves.json da ANAC
 interface AnacRawAircraft {
   MARCA: string; // Ex: "PRCRC"
-  DS_MODELO?: string; // Ex: "G280"
-  NM_FABRICANTE?: string; // Ex: "GULFSTREAM AEROSPACE"
-  NR_ANO_FABRICACAO?: string; // Ex: "2023"
-  NM_OPERADOR?: string; // Ex: "NATUREZA PRODUCOES ARTISTICAS..."
-  DS_TIPO_HABILITACAO?: string; // Ex: "MLTE"
-  DS_MOTIVO_CANCELAMENTO?: string;
-  CD_INTERDICAO?: string;
+  DSMODELO?: string; // Ex: "G280"
+  NMFABRICANTE?: string; // Ex: "GULFSTREAM AEROSPACE"
+  NRANOFABRICACAO?: string; // Ex: "2023"
+  OPERADORESJSON?: string; // Ex: "NATUREZA PRODUCOES ARTISTICAS..."
 }
 
 // Cache em memória para busca instantânea O(1)
@@ -67,12 +64,36 @@ export async function findAircraftInAnac(
 
   if (!raw) return null;
 
+  function parseOperators(value?: string): Array<{ NOME: string }> {
+    if (!value) {
+      return [];
+    }
+
+    try {
+      return JSON.parse(value) as Array<{ NOME: string }>;
+    } catch {
+      const normalized = value.replaceAll('/""', '"').replaceAll('""/', '"');
+
+      try {
+        return JSON.parse(normalized) as Array<{ NOME: string }>;
+      } catch (error) {
+        console.error("OPERADORESJSON inválido:", value, error);
+        return [];
+      }
+    }
+  }
+
+  const operatorNames = parseOperators(raw.OPERADORESJSON).map((x) => x.NOME);
+
+  console.log("operatorNames", operatorNames);
+
   return {
     registration: formatRegistration(raw.MARCA),
-    model: raw.DS_MODELO || "Modelo não informado",
-    manufacturer: raw.NM_FABRICANTE || "Fabricante não informado",
-    year: raw.NR_ANO_FABRICACAO || "Ano não informado",
-    operator: raw.NM_OPERADOR || "Não informado / Privado",
-    qualificationType: raw.DS_TIPO_HABILITACAO || "MNTE",
+    model: raw.DSMODELO || "Não encontrado",
+    manufacturer: raw.NMFABRICANTE || "Não encontrado",
+    year: raw.NRANOFABRICACAO || "Não encontrado",
+    operator: operatorNames.length
+      ? operatorNames.join(", ")
+      : "Não encontrado",
   };
 }

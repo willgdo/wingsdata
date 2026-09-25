@@ -41,20 +41,20 @@ export const ResultCard = ({ aircraft }: ResultCardProps) => {
 
         <dl className="aircraft-specs-grid">
           <div className="spec-item">
-            <dt>Ano de Fabricação</dt>
-            <dd>{aircraft.year}</dd>
-          </div>
-          <div className="spec-item">
-            <dt>Operador / Proprietário</dt>
-            <dd>{aircraft.operator || "Não informado"}</dd>
-          </div>
-          <div className="spec-item">
             <dt>Fabricante</dt>
             <dd>{aircraft.manufacturer}</dd>
           </div>
           <div className="spec-item">
-            <dt>Tipo de Habilitação</dt>
-            <dd>{aircraft.qualificationType || "MNTE / IFR"}</dd>
+            <dt>Modelo</dt>
+            <dd>{aircraft.model}</dd>
+          </div>
+          <div className="spec-item">
+            <dt>Ano de Fabricação</dt>
+            <dd>{aircraft.year}</dd>
+          </div>
+          <div className="spec-item">
+            <dt>Operador</dt>
+            <dd>{aircraft.operator || "Não informado"}</dd>
           </div>
         </dl>
       </div>

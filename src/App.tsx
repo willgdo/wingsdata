@@ -44,7 +44,6 @@ export function App() {
         manufacturer: anacData.manufacturer || "Desconhecido",
         year: anacData.year || "-",
         operator: anacData.operator || "Não informado",
-        qualificationType: anacData.qualificationType,
         imageUrl: "./placeholder-plane.jpg",
       };
       setSelectedAircraft(currentData);
