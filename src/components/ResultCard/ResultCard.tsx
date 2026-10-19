@@ -32,7 +32,7 @@ export const ResultCard = ({
         ) : hasPhoto ? (
           <>
             <img
-              src={aircraft.imageUrl}
+              src={aircraft.imageUrl || undefined}
               alt={`${aircraft.model} ${regWithHyphen}`}
               className="aircraft-photo"
               onError={() => setImageError(true)}
