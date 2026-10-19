@@ -1,5 +1,7 @@
-import type { AircraftData } from "../../types/aircraft";
+import { useState } from "react";
 import { Loader } from "../Loader/Loader";
+import { NoPhotoFallback } from "../NoPhotoFallback/NoPhotoFallback";
+import type { AircraftData } from "../../types/aircraft";
 import "./ResultCard.css";
 
 interface ResultCardProps {
@@ -11,27 +13,29 @@ export const ResultCard = ({
   aircraft,
   isLoadingPhoto = false,
 }: ResultCardProps) => {
+  const [imageError, setImageError] = useState(false);
+
   const cleanReg = aircraft.registration.replace("-", "").toUpperCase();
   const regWithHyphen = aircraft.registration.includes("-")
     ? aircraft.registration.toUpperCase()
     : `${aircraft.registration.slice(0, 2)}-${aircraft.registration.slice(2)}`.toUpperCase();
 
+  const hasPhoto = Boolean(aircraft.imageUrl) && !imageError;
+
   return (
     <article className="result-card">
       <div className="card-media">
-        {isLoadingPhoto || !aircraft.imageUrl ? (
+        {isLoadingPhoto ? (
           <div className="photo-loader-container">
             <Loader />
           </div>
-        ) : (
+        ) : hasPhoto ? (
           <>
             <img
               src={aircraft.imageUrl}
               alt={`${aircraft.model} ${regWithHyphen}`}
               className="aircraft-photo"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = "./placeholder-plane.jpg";
-              }}
+              onError={() => setImageError(true)}
             />
             {aircraft.credits && (
               <div className="photo-credit-badge">
@@ -43,6 +47,8 @@ export const ResultCard = ({
               </div>
             )}
           </>
+        ) : (
+          <NoPhotoFallback registration={regWithHyphen} />
         )}
       </div>
 
