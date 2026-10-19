@@ -156,7 +156,7 @@
   border-color: #38bdf8;
 }
 
-.action-btn.jetphotos:hover {
+.action-btn.planespotters:hover {
   color: #fb923c;
   border-color: #fb923c;
 }
@@ -164,6 +164,28 @@
 .action-btn.anac:hover {
   color: #4ade80;
   border-color: #4ade80;
+}
+
+.plane-loader {
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+}
+
+.plane-loader svg {
+  width: 100%;
+  height: 100%;
+  animation: flight-spin 1.8s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes flight-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 600px) {

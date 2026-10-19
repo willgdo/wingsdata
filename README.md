@@ -14,7 +14,7 @@
 
 O **WingsData** nasceu da necessidade de consultar dados técnicos, ano de fabricação, operadores e habilitações de aeronaves registradas no Brasil de forma instantânea, limpa e responsiva.
 
-Diferente de consultas tradicionais em tabelas estáticas do governo, o projeto alia uma interface inspirada em aviônicos e design _glassmorphism_ moderno a uma busca indexada em memória, além de integrar atalhos diretos para monitoramento de voo (Flightradar24), acervos de fotos (JetPhotos) e certidões oficiais da ANAC.
+Diferente de consultas tradicionais em tabelas estáticas do governo, o projeto alia uma interface inspirada em aviônicos e design _glassmorphism_ moderno a uma busca indexada em memória, além de integrar atalhos diretos para monitoramento de voo (Flightradar24), acervos de fotos (Planespotters) e certidões oficiais da ANAC.
 
 ---
 
@@ -24,7 +24,7 @@ Diferente de consultas tradicionais em tabelas estáticas do governo, o projeto 
 - **Normalização Inteligente de Prefixos:** Reconhecimento automático de formatos comuns da aviação brasileira (`PRCRC`, `pr-crc`, `PT-MYS`, `PS-AEF`).
 - **Enriquecimento Visual Automático:** Integração assíncrona com a API pública do **Planespotters.net** para exibição de fotos em alta resolução da matrícula pesquisada e créditos autorais.
 - **Histórico Persistido:** Armazenamento em `localStorage` das últimas 5 consultas do usuário com atalhos em chips clicáveis e opção de remoção individual.
-- **Links Rápidos de Contexto:** Redirecionamento automático com os parâmetros da aeronave para Flightradar24, JetPhotos e consulta oficial da ANAC.
+- **Links Rápidos de Contexto:** Redirecionamento automático com os parâmetros da aeronave para Flightradar24, Planespotters e consulta oficial da ANAC.
 - **Pipeline Automatizada (CI/CD):** Cronjob semanal no GitHub Actions para atualizar a base de dados oficial e deploy contínuo via Pages.
 
 ---
