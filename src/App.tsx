@@ -14,18 +14,19 @@ export function App() {
   const [selectedAircraft, setSelectedAircraft] = useState<AircraftData | null>(
     null,
   );
-  const [loading, setLoading] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [isLoadingPhoto, setIsLoadingPhoto] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
   const { recentSearches, addSearch, removeSearch, clearSearches } =
     useRecentSearches();
 
   const handleSearch = async (rawQuery: string) => {
-    setLoading(true);
+    setIsSearching(true);
     setNotFound(false);
 
     try {
-      // 1. Consulta no Map da ANAC
+      // 1. Busca imediata no RAB (instantânea via Map)
       const anacData = await findAircraftInAnac(rawQuery);
 
       if (!anacData || !anacData.registration) {
@@ -34,24 +35,25 @@ export function App() {
         return;
       }
 
-      // Adiciona aos recentes somente se a aeronave realmente existir no RAB
       addSearch(anacData.registration);
 
-      // 2. Estado inicial com placeholder rápido
-      const currentData: AircraftData = {
+      // 2. Renderiza dados técnicos IMEDIATAMENTE (sem imagem ainda)
+      setSelectedAircraft({
         registration: anacData.registration,
         model: anacData.model || "Desconhecido",
         manufacturer: anacData.manufacturer || "Desconhecido",
         year: anacData.year || "-",
         operator: anacData.operator || "Não informado",
         imageUrl: "./placeholder-plane.jpg",
-      };
-      setSelectedAircraft(currentData);
+      });
 
-      // 3. Busca a foto no Planespotters em segundo plano
+      // 3. Busca a foto em segundo plano
+      setIsLoadingPhoto(true);
       const photo = await fetchAircraftPhoto(anacData.registration);
+
+      // 4. Injeta a foto assim que o Planespotters responder
       setSelectedAircraft((prev) =>
-        prev
+        prev && prev.registration === anacData.registration
           ? {
               ...prev,
               imageUrl: photo.imageUrl,
@@ -60,13 +62,14 @@ export function App() {
                 source: photo.source,
               },
             }
-          : null,
+          : prev,
       );
     } catch (error) {
       console.error("Erro na busca:", error);
       setNotFound(true);
     } finally {
-      setLoading(false);
+      setIsSearching(false);
+      setIsLoadingPhoto(false);
     }
   };
 
@@ -74,7 +77,7 @@ export function App() {
     <div className="app-container">
       <Header />
       <main className="app-main">
-        <SearchBar onSearch={handleSearch} isLoading={loading} />
+        <SearchBar onSearch={handleSearch} isLoading={isSearching} />
 
         <RecentSearches
           items={recentSearches}
@@ -89,7 +92,12 @@ export function App() {
           </p>
         )}
 
-        {selectedAircraft && <ResultCard aircraft={selectedAircraft} />}
+        {selectedAircraft && (
+          <ResultCard
+            aircraft={selectedAircraft}
+            isLoadingPhoto={isLoadingPhoto}
+          />
+        )}
       </main>
       <Footer />
     </div>
