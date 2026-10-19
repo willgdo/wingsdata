@@ -52,18 +52,20 @@ export function App() {
       const photo = await fetchAircraftPhoto(anacData.registration);
 
       // 4. Injeta a foto assim que o Planespotters responder
-      setSelectedAircraft((prev) =>
-        prev && prev.registration === anacData.registration
-          ? {
-              ...prev,
-              imageUrl: photo.imageUrl,
-              credits: {
-                photographer: photo.photographer,
-                source: photo.source,
-              },
-            }
-          : prev,
-      );
+      setSelectedAircraft((prev): AircraftData | null => {
+        if (!prev || prev.registration !== anacData.registration) {
+          return prev;
+        }
+
+        return {
+          ...prev,
+          imageUrl: photo.imageUrl,
+          credits: {
+            photographer: photo.photographer,
+            source: photo.source,
+          },
+        };
+      });
     } catch (error) {
       console.error("Erro na busca:", error);
       setNotFound(true);

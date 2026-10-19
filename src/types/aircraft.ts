@@ -1,5 +1,5 @@
 export interface PhotoCredit {
-  photographer: string;
+  photographer: string | null;
   source: string;
 }
 
@@ -9,6 +9,6 @@ export interface AircraftData {
   manufacturer: string;
   year: number | string;
   operator: string;
-  imageUrl?: string;
-  credits?: PhotoCredit;
+  imageUrl?: string | null;
+  credits?: PhotoCredit | null;
 }
