@@ -1,5 +1,6 @@
 .app-container {
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   background-color: #121820;
   display: flex;

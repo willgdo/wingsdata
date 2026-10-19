@@ -2,7 +2,7 @@
   width: 100%;
   border-top: 1px solid #16202c;
   background-color: #0d131a;
-  padding: 24px 20px;
+  padding: 20px 24px calc(20px + env(safe-area-inset-bottom, 0px));
   margin-top: auto;
 }
 
