@@ -166,26 +166,13 @@
   border-color: #4ade80;
 }
 
-.plane-loader {
-  width: 120px;
-  height: 120px;
-  display: inline-block;
-}
-
-.plane-loader svg {
+.photo-loader-container {
   width: 100%;
   height: 100%;
-  animation: flight-spin 1.8s linear infinite;
-  transform-origin: center center;
-}
-
-@keyframes flight-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #080e15;
 }
 
 @media (max-width: 600px) {

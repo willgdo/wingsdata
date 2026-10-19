@@ -9,6 +9,6 @@ export interface AircraftData {
   manufacturer: string;
   year: number | string;
   operator: string;
-  imageUrl: string;
+  imageUrl?: string;
   credits?: PhotoCredit;
 }
