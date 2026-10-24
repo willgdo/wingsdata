@@ -87,11 +87,20 @@ export function App() {
     [addSearch],
   );
 
+  const handleReset = () => {
+    setSelectedAircraft(null);
+    setNotFound(false);
+
+    // Limpa o parâmetro da URL mantendo apenas o pathname (ex: /wingsdata/)
+    const cleanUrl = window.location.pathname;
+    window.history.pushState({}, "", cleanUrl);
+  };
+
   // Sincronização inicial da URL e escuta das setas Voltar/Avançar
   useEffect(() => {
     const handleLocationChange = () => {
       const params = new URLSearchParams(window.location.search);
-      const regFromUrl = params.get("reg") || params.get("aeronave");
+      const regFromUrl = params.get("reg");
 
       if (regFromUrl) {
         handleSearch(regFromUrl, false);
@@ -111,7 +120,7 @@ export function App() {
 
   return (
     <div className="app-container">
-      <Header onOpenAbout={() => setIsAboutOpen(true)} />
+      <Header onOpenAbout={() => setIsAboutOpen(true)} onReset={handleReset} />
 
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 

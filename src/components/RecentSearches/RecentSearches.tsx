@@ -20,7 +20,12 @@ export const RecentSearches = ({
       <div className="recent-header">
         <span className="recent-title">Recentes (5 últimos)</span>
         {onClearAll && (
-          <button type="button" className="clear-all-btn" onClick={onClearAll}>
+          <button
+            type="button"
+            className="clear-all-btn"
+            title="Limpar recentes"
+            onClick={onClearAll}
+          >
             Limpar
           </button>
         )}

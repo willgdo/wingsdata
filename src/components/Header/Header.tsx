@@ -2,13 +2,21 @@ import "./Header.css";
 
 interface HeaderProps {
   onOpenAbout: () => void;
+  onReset?: () => void;
 }
 
-export const Header = ({ onOpenAbout }: HeaderProps) => {
+export const Header = ({ onOpenAbout, onReset }: HeaderProps) => {
   return (
     <header className="app-header">
       <div className="header-inner">
-        <h1 className="header-logo">WingsData</h1>
+        <button
+          type="button"
+          className="header-logo-btn"
+          onClick={onReset}
+          title="Ir para a página inicial"
+        >
+          <h1 className="header-logo">WingsData</h1>
+        </button>
 
         <button
           type="button"
