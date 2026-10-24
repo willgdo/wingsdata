@@ -12,8 +12,10 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const cleanValue = value.trim().toUpperCase();
+    
     if (!cleanValue) return;
     onSearch(cleanValue);
+    setValue("");
   };
 
   return (
