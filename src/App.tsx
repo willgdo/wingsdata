@@ -118,6 +118,8 @@ export function App() {
     return () => window.removeEventListener("popstate", handleLocationChange);
   }, [handleSearch]);
 
+  const hasContent = Boolean(selectedAircraft || notFound);
+
   return (
     <div className="app-container">
       <Header onOpenAbout={() => setIsAboutOpen(true)} onReset={handleReset} />
@@ -125,28 +127,37 @@ export function App() {
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
       <main className="app-main">
-        <SearchBar onSearch={handleSearch} isLoading={isSearching} />
+        <div
+          className={`search-section ${!hasContent ? "is-centered" : "is-active"}`}
+        >
+          <SearchBar onSearch={handleSearch} isLoading={isSearching} />
 
-        <RecentSearches
-          items={recentSearches}
-          onSelect={handleSearch}
-          onRemove={removeSearch}
-          onClearAll={clearSearches}
-        />
+          <RecentSearches
+            items={recentSearches}
+            onSelect={handleSearch}
+            onRemove={removeSearch}
+            onClearAll={clearSearches}
+          />
+        </div>
 
         {notFound && (
-          <p className="not-found-msg">
-            Aeronave não localizada no Registro Aeronáutico Brasileiro (RAB).
-          </p>
+          <div className="results-wrapper">
+            <p className="not-found-msg">
+              Aeronave não localizada no Registro Aeronáutico Brasileiro (RAB).
+            </p>
+          </div>
         )}
 
         {selectedAircraft && (
-          <ResultCard
-            aircraft={selectedAircraft}
-            isLoadingPhoto={isLoadingPhoto}
-          />
+          <div className="results-wrapper">
+            <ResultCard
+              aircraft={selectedAircraft}
+              isLoadingPhoto={isLoadingPhoto}
+            />
+          </div>
         )}
       </main>
+
       <Footer />
     </div>
   );

@@ -12,7 +12,55 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Área de busca com física suave de transição */
+.search-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, margin;
+}
+
+/* Estado 1: Inicial / Reset (Centralizado na viewport útil) */
+.search-section.is-centered {
+  margin-top: 18vh;
+  margin-top: 18dvh;
+  transform: translateY(0);
+}
+
+/* Estado 2: Com conteúdo ativo (Sobe suavemente para o topo) */
+.search-section.is-active {
+  margin-top: 20px;
+  transform: translateY(0);
+}
+
+/* Wrapper dos resultados (aparece com fade-in e leve elevação) */
+.results-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: contentFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes contentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .not-found-msg {
