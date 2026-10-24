@@ -48,10 +48,9 @@ export const AboutModal = ({ isOpen, onClose }: AboutModalProps) => {
 
         <div className="modal-body">
           <p>
-            O <strong>WingsData</strong> foi desenvolvido para entusiastas da
-            aviação, pilotos e spotters, proporcionando uma busca ágil de dados
-            cadastrais de aeronaves civis registradas no Brasil com fotos em
-            tempo real.
+            Essa página foi desenvolvida para entusiastas da aviação, pilotos e
+            spotters, proporcionando uma busca ágil de dados cadastrais de
+            aeronaves civis registradas no Brasil.
           </p>
 
           <div className="modal-feature-box">

@@ -35,7 +35,7 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
                 text.length > 2 ? `${text.slice(0, 2)}-${text.slice(2)}` : text,
               );
             }}
-            placeholder="EX: PRCRC"
+            placeholder="EX: PP-LBF"
             maxLength={6}
           />
           <button

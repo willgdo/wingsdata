@@ -107,4 +107,25 @@
     overflow-x: auto;
     padding-bottom: 4px;
   }
+
+  .chip {
+    padding: 0 6px 0 14px;
+    height: 38px;
+  }
+
+  .chip:hover {
+    border-color: #334155;
+    background-color: #0f172a;
+  }
+
+  .chip-remove-btn {
+    font-size: 1rem;
+    padding: 0 8px;
+    height: 28px;
+    width: 28px;
+  }
+
+  .clear-all-btn {
+    font-size: 0.8rem;
+  }
 }
