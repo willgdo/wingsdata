@@ -60,7 +60,7 @@
 
 .chip:hover {
   border-color: #ff8a00;
-  background-color: #172033;
+  background-color: rgba(255, 138, 0, 0.08);
 }
 
 /* Botão de texto do prefixo */
@@ -76,10 +76,6 @@
   padding: 0;
   display: flex;
   align-items: center;
-}
-
-.chip-label-btn:hover {
-  color: #ff8a00;
 }
 
 /* Botão de excluir individual (X) */

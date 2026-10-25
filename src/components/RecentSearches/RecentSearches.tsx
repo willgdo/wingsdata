@@ -18,7 +18,7 @@ export const RecentSearches = ({
   return (
     <section className="recent-searches" aria-label="Buscas recentes">
       <div className="recent-header">
-        <span className="recent-title">Recentes</span>
+        <span className="recent-title">Recentes (5 últimos)</span>
         {onClearAll && (
           <button type="button" className="clear-all-btn" onClick={onClearAll}>
             Limpar

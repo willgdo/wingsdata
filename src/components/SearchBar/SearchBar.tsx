@@ -27,9 +27,16 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
             id="registration"
             name="registration"
             value={value}
-            onChange={(e) => setValue(e.target.value.toUpperCase())}
-            placeholder="EX: PR-CRC"
-            maxLength={5}
+            onChange={(e) => {
+              const text = e.target.value
+                .replace(/[^a-zA-Z]/g, "")
+                .toUpperCase();
+              setValue(
+                text.length > 2 ? `${text.slice(0, 2)}-${text.slice(2)}` : text,
+              );
+            }}
+            placeholder="EX: PRCRC"
+            maxLength={6}
           />
           <button
             type="submit"
