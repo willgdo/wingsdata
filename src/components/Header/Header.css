@@ -11,6 +11,52 @@
   letter-spacing: 1px;
 }
 
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.about-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.about-trigger-btn:hover {
+  color: #f1f5f9;
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.about-icon {
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+@media (max-width: 480px) {
+  .about-label {
+    /* display: none;  */
+  }
+
+  .about-trigger-btn {
+    padding: 6px 10px;
+    margin-right: 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .app-header h1 {
     font-size: 1.5rem;

@@ -9,8 +9,10 @@ import { findAircraftInAnac } from "./services/anacService";
 import { fetchAircraftPhoto } from "./services/photoService";
 import type { AircraftData } from "./types/aircraft";
 import "./App.css";
+import { AboutModal } from "./components/AboutModal/AboutModal";
 
 export function App() {
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [selectedAircraft, setSelectedAircraft] = useState<AircraftData | null>(
     null,
   );
@@ -77,7 +79,10 @@ export function App() {
 
   return (
     <div className="app-container">
-      <Header />
+      <Header onOpenAbout={() => setIsAboutOpen(true)} />
+
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+
       <main className="app-main">
         <SearchBar onSearch={handleSearch} isLoading={isSearching} />
 
