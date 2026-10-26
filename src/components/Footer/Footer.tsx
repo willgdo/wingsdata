@@ -21,7 +21,7 @@ export const Footer = () => {
           </small>
         )}
         <p>
-          Feito por <strong>Willian</strong>
+          Criado por <strong>Willian Oliveira</strong>
         </p>
       </div>
     </footer>
