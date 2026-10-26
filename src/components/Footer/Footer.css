@@ -12,6 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-content p {
@@ -33,4 +35,11 @@
 
 .footer-content strong:hover {
   color: #ff8a00;
+}
+
+.update-date-text {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
 }
