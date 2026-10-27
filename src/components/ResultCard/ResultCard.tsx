@@ -21,6 +21,8 @@ export const ResultCard = ({
     : `${aircraft.registration.slice(0, 2)}-${aircraft.registration.slice(2)}`.toUpperCase();
 
   const hasPhoto = Boolean(aircraft.imageUrl) && !imageError;
+  const owners = (aircraft.proprietary ?? "").split(",");
+  const operators = aircraft.operator.split(",");
 
   return (
     <article className="result-card">
@@ -69,11 +71,29 @@ export const ResultCard = ({
           </div>
           <div className="spec-item">
             <dt>Proprietário</dt>
-            <dd>{aircraft.proprietary}</dd>
+            <dd>
+              {owners.map((owner) => (
+                <>
+                  <span key={owner}>
+                    {owners.length > 1 ? "•" : ""} {owner}
+                  </span>
+                  <br />
+                </>
+              ))}
+            </dd>
           </div>
           <div className="spec-item">
             <dt>Operador</dt>
-            <dd>{aircraft.operator}</dd>
+            <dd>
+              {operators.map((operator) => (
+                <>
+                  <span key={operator}>
+                    {operators.length > 1 ? "•" : ""} {operator}
+                  </span>
+                  <br />
+                </>
+              ))}
+            </dd>
           </div>
           <div className="spec-item">
             <dt>Ano de Fabricação</dt>
