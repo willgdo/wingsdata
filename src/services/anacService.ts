@@ -10,7 +10,11 @@ interface AnacRawAircraft {
   DSMODELO?: string; // Ex: "G280"
   NMFABRICANTE?: string; // Ex: "GULFSTREAM AEROSPACE"
   NRANOFABRICACAO?: string; // Ex: "2023"
+  PROPRIETARIOSJSON?: string; // Ex: "[{"NOME":"NATUREZA PRODUCOES ARTISTICAS LTDA"}]"
   OPERADORESJSON?: string; // Ex: "NATUREZA PRODUCOES ARTISTICAS..."
+  NRSERIE?: string; // Ex: "12345"
+  TPMOTOR?: string; // Ex: "TURBOFAN"
+  TPPOUSO?: string; // Ex: "POUSO CONVENCIONAL"
 }
 
 // Cache em memória para busca instantânea O(1)
@@ -85,7 +89,11 @@ export async function findAircraftInAnac(
 
   const operatorNames = parseOperators(raw.OPERADORESJSON).map((x) => x.NOME);
 
-  console.log("operatorNames", operatorNames);
+  const proprietaryNames = parseOperators(raw.PROPRIETARIOSJSON).map(
+    (x) => x.NOME,
+  );
+
+  console.log("raw", raw);
 
   return {
     registration: formatRegistration(raw.MARCA),
@@ -95,5 +103,11 @@ export async function findAircraftInAnac(
     operator: operatorNames.length
       ? operatorNames.join(", ")
       : "Não encontrado",
+    proprietary: proprietaryNames.length
+      ? proprietaryNames.join(", ")
+      : "Não encontrado",
+    nmserie: raw.NRSERIE || "Não encontrado",
+    tpmotor: raw.TPMOTOR || "Não encontrado",
+    tppouso: raw.TPPOUSO || "Não encontrado",
   };
 }

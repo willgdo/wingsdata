@@ -68,12 +68,27 @@ export const ResultCard = ({
             <dd>{aircraft.model}</dd>
           </div>
           <div className="spec-item">
+            <dt>Proprietário</dt>
+            <dd>{aircraft.proprietary}</dd>
+          </div>
+          <div className="spec-item">
+            <dt>Operador</dt>
+            <dd>{aircraft.operator}</dd>
+          </div>
+          <div className="spec-item">
             <dt>Ano de Fabricação</dt>
             <dd>{aircraft.year}</dd>
           </div>
           <div className="spec-item">
-            <dt>Operador</dt>
-            <dd>{aircraft.operator || "Não informado"}</dd>
+            <dt>Número de Série</dt>
+            <dd>{aircraft.nmserie}</dd>
+          </div>
+          <div className="spec-item">
+            <dt>Tipo</dt>
+            <dd>
+              {aircraft.tppouso} {" - "}
+              {aircraft.tpmotor}
+            </dd>
           </div>
         </dl>
       </div>

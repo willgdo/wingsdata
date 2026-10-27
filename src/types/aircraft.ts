@@ -8,7 +8,11 @@ export interface AircraftData {
   model: string;
   manufacturer: string;
   year: number | string;
+  proprietary?: string;
   operator: string;
+  nmserie?: string;
+  tppouso?: string;
+  tpmotor?: string;
   imageUrl?: string | null;
   credits?: PhotoCredit | null;
 }

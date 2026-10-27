@@ -44,8 +44,12 @@ export function App() {
         setSelectedAircraft({
           registration: anacData.registration,
           model: anacData.model || "Desconhecido",
+          proprietary: anacData.proprietary || "Não informado",
           manufacturer: anacData.manufacturer || "Desconhecido",
           year: anacData.year || "-",
+          tpmotor: anacData.tpmotor || "Desconhecido",
+          tppouso: anacData.tppouso || "Desconhecido",
+          nmserie: anacData.nmserie || "Desconhecido",
           operator: anacData.operator || "Não informado",
           imageUrl: null,
         });
