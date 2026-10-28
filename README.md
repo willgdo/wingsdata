@@ -1,12 +1,10 @@
 # ✈️ WingsData
 
-> Plataforma ágil e moderna para consulta de registros de aeronaves civis brasileiras (RAB / ANAC) com enriquecimento visual em tempo real via API do Planespotters.
+> Uma ferramenta ágil e moderna para consulta de registros de aeronaves civis brasileiras (RAB / ANAC) com enriquecimento visual em tempo real via API do Planespotters.
 
 [![Deploy to GitHub Pages](https://github.com/willgdo/wingsdata/actions/workflows/deploy.yml/badge.svg)](https://github.com/willgdo/wingsdata/actions/workflows/deploy.yml)
-[![Licença](https://img.shields.io/badge/licença-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-online-success.svg)]((https://willgdo.github.io/wingsdata/)
 
-[🔗 Acessar Demonstração Online](https://willgdo.github.io/wingsdata/)
+🌐 **Demonstração online:** [https://willgdo.github.io/wingsdata](https://willgdo.github.io/wingsdata/)
 
 ---
 
