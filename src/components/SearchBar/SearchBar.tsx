@@ -12,7 +12,7 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const cleanValue = value.trim().toUpperCase();
-    
+
     if (!cleanValue) return;
     onSearch(cleanValue);
     setValue("");
@@ -46,7 +46,7 @@ export const SearchBar = ({ onSearch, isLoading = false }: SearchBarProps) => {
             aria-label="Buscar aeronave"
             disabled={isLoading}
           >
-            <img src="./btn-airplane.png" alt="" aria-hidden="true" />
+            <img src="./assets/btn-airplane.png" alt="" aria-hidden="true" />
           </button>
         </div>
       </form>
