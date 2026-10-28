@@ -12,7 +12,7 @@
 
 O **WingsData** foi desenvolvido para agilizar a consulta de aeronaves registradas no Brasil, permitindo pesquisar qualquer matrícula de forma instantânea, fluida e responsiva.
 
-Diferente das consultas convencionais em páginas ou tabelas brutas de dados abertos, o projeto combina uma interface moderna em estilo *glassmorphism* com busca indexada em memória ($O(1)$) e exibição dinâmica de fotos. Além disso, disponibiliza atalhos diretos para rastreamento de voo em tempo real (Flightradar24), acervos fotográficos (Planespotters) e certidões oficiais do Registro Aeronáutico Brasileiro (RAB/ANAC).
+Diferente das consultas convencionais em páginas ou tabelas brutas de dados abertos, o projeto combina uma interface moderna em estilo *glassmorphism* com busca indexada em memória $O(1)$ e exibição dinâmica de fotos. Além disso, disponibiliza atalhos diretos para rastreamento de voo em tempo real (Flightradar24), acervos fotográficos (Planespotters) e certidões oficiais do Registro Aeronáutico Brasileiro (RAB/ANAC).
 
 ## 🚀 Principais Funcionalidades
 
