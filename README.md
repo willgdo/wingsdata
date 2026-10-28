@@ -65,12 +65,25 @@ wingsdata/
 
 ---
 
-## 📸 Imagens do Projeto
+## 📸 Telas & Protótipo
 
+### ✏️ Concepção & Wireframe
+> Rascunho Inicial no Excalidraw: Planejamento inicial do fluxo de busca, hierarquia de informações cadastrais e posicionamento do card de detalhes.
 <img width="1515" height="557" alt="Captura de tela 2026-10-28 134705" src="https://github.com/user-attachments/assets/4ae894e5-49a3-4897-9ca2-52d1fc0344e6" />
-<img width="1518" height="832" alt="Captura de tela 2026-10-28 134434" src="https://github.com/user-attachments/assets/d5b02580-354a-4691-9bf2-c3c5ab2326e4" />
-<img width="917" height="822" alt="Captura de tela 2026-10-28 134553" src="https://github.com/user-attachments/assets/f32da832-a51b-4792-affe-28c5128bb4d0" />
-<img width="407" height="741" alt="Captura de tela 2026-10-28 134609" src="https://github.com/user-attachments/assets/d87f6ce4-1a3f-4efb-94cd-eb1b51ec57d4" />
 
+---
+
+### 🚀 Aplicação em Produção - Tela Inicial (Busca Centralizada)
+<img width="1518" height="832" alt="Captura de tela 2026-10-28 134434" src="https://github.com/user-attachments/assets/d5b02580-354a-4691-9bf2-c3c5ab2326e4" />
+
+---
+
+### 🚀 Aplicação em Produção - Resultado com Foto & Dados Oficiais
+<img width="917" height="822" alt="Captura de tela 2026-10-28 134553" src="https://github.com/user-attachments/assets/f32da832-a51b-4792-affe-28c5128bb4d0" />
+
+---
+
+### 🚀 Aplicação em Produção -  Resultado com Foto & Dados Oficiais - Mobile
+<img width="407" height="741" alt="Captura de tela 2026-10-28 134609" src="https://github.com/user-attachments/assets/d87f6ce4-1a3f-4efb-94cd-eb1b51ec57d4" />
 
 
