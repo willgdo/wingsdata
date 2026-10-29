@@ -57,7 +57,9 @@ export const ResultCard = ({
       <div className="card-body">
         <header className="aircraft-title">
           <h2>{regWithHyphen}</h2>
-          <span className="aircraft-model">{aircraft.model}</span>
+          <span className="aircraft-model">
+            {aircraft.tipoIcao === "ZZZZ" ? aircraft.model : aircraft.tipoIcao}
+          </span>
         </header>
 
         <dl className="aircraft-specs-grid">
