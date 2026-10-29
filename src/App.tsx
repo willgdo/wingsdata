@@ -46,6 +46,7 @@ export function App() {
           model: anacData.model || "Desconhecido",
           proprietary: anacData.proprietary || "Não informado",
           manufacturer: anacData.manufacturer || "Desconhecido",
+          tipoIcao: anacData.tipoIcao || "Desconhecido",
           year: anacData.year || "-",
           tpmotor: anacData.tpmotor || "Desconhecido",
           tppouso: anacData.tppouso || "Desconhecido",

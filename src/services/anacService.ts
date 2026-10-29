@@ -10,6 +10,7 @@ interface AnacRawAircraft {
   DSMODELO?: string; // Ex: "G280"
   NMFABRICANTE?: string; // Ex: "GULFSTREAM AEROSPACE"
   NRANOFABRICACAO?: string; // Ex: "2023"
+  CDTIPOICAO?: string; // Ex: "C152"
   PROPRIETARIOSJSON?: string; // Ex: "[{"NOME":"NATUREZA PRODUCOES ARTISTICAS LTDA"}]"
   OPERADORESJSON?: string; // Ex: "NATUREZA PRODUCOES ARTISTICAS..."
   NRSERIE?: string; // Ex: "12345"
@@ -99,6 +100,7 @@ export async function findAircraftInAnac(
     registration: formatRegistration(raw.MARCA),
     model: raw.DSMODELO || "Não encontrado",
     manufacturer: raw.NMFABRICANTE || "Não encontrado",
+    tipoIcao: raw.CDTIPOICAO || "Não encontrado",
     year: raw.NRANOFABRICACAO || "Não encontrado",
     operator: operatorNames.length
       ? operatorNames.join(", ")

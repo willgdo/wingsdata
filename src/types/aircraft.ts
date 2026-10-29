@@ -7,6 +7,7 @@ export interface AircraftData {
   registration: string;
   model: string;
   manufacturer: string;
+  tipoIcao: string;
   year: number | string;
   proprietary?: string;
   operator: string;
